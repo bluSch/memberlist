@@ -613,7 +613,7 @@ func (m *Memberlist) aliveNode(a *alive, notify chan struct{}) {
 			}
 			m.config.Conflict.NotifyConflict(&state.Node, &other)
 		}
-		return
+		os.Exit(1)
 	}
 
 	// Bail if the incarnation number is old
